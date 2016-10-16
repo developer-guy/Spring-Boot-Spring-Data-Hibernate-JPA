@@ -1,0 +1,12 @@
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/controller/RegisterController.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/config/DatabaseConfig.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/repository/GenericDaoRepository.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/domain/User.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/dao/UserDao.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/repository/UserRepository.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/service/UserService.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/config/HibernateJpaConfig.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/dao/GenericDao.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/service/GenericDaoService.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/controller/HomeController.java
+/home/bapaydin/IdeaProjects/SampleProject/src/main/java/org/todolist/persistence/controller/SpringBootWebApp.java

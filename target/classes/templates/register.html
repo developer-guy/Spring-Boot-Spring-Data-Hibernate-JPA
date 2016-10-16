@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Register</title>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <style type="text/css">
+        form { margin: 0px 10px; }
+
+        h2 {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        .container { max-width: 360px; }
+
+        .divider hr {
+            margin: 7px 0px;
+            width: 35%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="input-group">
+        <div class="container">
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+                            <div class="form-group">
+                                <h2>Create account</h2>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="signupName">Your name</label>
+                                <input id="signupName" type="text" maxlength="50" class="form-control" th:field="*{userName}"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="signupName">Your name</label>
+                                <input id="signupName" type="text" maxlength="50" class="form-control" th:field="*{surName}"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="signupEmail">Email</label>
+                                <input id="signupEmail" type="email" maxlength="50" class="form-control" th:field="*{email}"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="signupPassword">Password</label>
+                                <input id="signupPassword" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters" length="40" th:field="*{password}"/>
+                            </div>
+                            <div class="form-group">
+                                <button id="signupSubmit" type="submit" class="btn btn-info btn-block">Create your account</button>
+                            </div>
+                            <p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>
+                            <p>Already have an account? <a href="#">Sign in</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

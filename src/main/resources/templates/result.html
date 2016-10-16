@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'id: ' + ${user.id}" />
+<p th:text="'First Name: ' + ${user.userName}" />
+<p th:text="'Last Name: ' + ${user.password}" />
+<a href="/form">Submit another Customer Form</a>
+</body>
+</html>
