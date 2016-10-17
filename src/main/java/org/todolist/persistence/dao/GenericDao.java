@@ -8,11 +8,14 @@ import java.util.List;
 /**
  * Created by bapaydin on 16.10.2016.
  */
-@Repository
-public interface GenericDao<E,K extends Serializable> {
-    public E add(E e);
-    public E update(E e);
-    public E delete(E e);
-    public E find(E e,K key);
-    public List<E> findAll();
+public abstract class GenericDao<E, K extends Serializable> {
+    public abstract E add(E e);
+
+    public abstract E update(E e);
+
+    public abstract E delete(E e);
+
+    public abstract E find(E e, K key);
+
+    public abstract List<E> findAll();
 }

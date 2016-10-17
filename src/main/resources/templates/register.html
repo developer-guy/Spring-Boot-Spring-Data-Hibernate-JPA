@@ -26,15 +26,32 @@
             width: 35%;
         }
 
+        .colorgraph {
+            height: 5px;
+            border-top: 0;
+            background: #c4e17f;
+            border-radius: 5px;
+            background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+            background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+            background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+            background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+        }
+
+        .center_div{
+            margin: 10% auto;
+            width:80% /* value of your choice which suits your alignment */
+        }
+
     </style>
 </head>
 <body>
-    <div class="input-group">
+    <div class="input-group center_div">
         <div class="container">
             <div class="row">
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+                            <hr class="colorgraph"/>
                             <div class="form-group">
                                 <h2>Create account</h2>
                             </div>
@@ -43,7 +60,7 @@
                                 <input id="signupName" type="text" maxlength="50" class="form-control" th:field="*{userName}"/>
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="signupName">Your name</label>
+                                <label class="control-label" for="signupName">Your surname</label>
                                 <input id="signupName" type="text" maxlength="50" class="form-control" th:field="*{surName}"/>
                             </div>
                             <div class="form-group">
@@ -57,9 +74,8 @@
                             <div class="form-group">
                                 <button id="signupSubmit" type="submit" class="btn btn-info btn-block">Create your account</button>
                             </div>
-                            <p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>
-                            <p>Already have an account? <a href="#">Sign in</a></p>
                         </form>
+                        <hr class="colorgraph"/>
                     </div>
                 </div>
             </div>

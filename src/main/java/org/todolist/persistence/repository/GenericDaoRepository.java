@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by bapaydin on 16.10.2016.
  */
-public abstract class GenericDaoRepository<E, K extends Serializable> implements GenericDao<E, K> {
+public abstract class GenericDaoRepository<E, K extends Serializable> extends GenericDao<E,K>{
 
     @PersistenceContext
     public EntityManager entityManager;
@@ -26,20 +26,17 @@ public abstract class GenericDaoRepository<E, K extends Serializable> implements
         this.entityClass = (Class<E>) genericSuperclass.getActualTypeArguments()[0];
     }
 
-    @Override
     @Transactional
     public E add(E e) {
         entityManager.persist(e);
         return e;
     }
 
-    @Override
     @Transactional
     public E update(E e) {
         return entityManager.merge(e);
     }
 
-    @Override
     @Transactional
     public E delete(E e) {
         if (entityManager.contains(e)) {
@@ -51,13 +48,11 @@ public abstract class GenericDaoRepository<E, K extends Serializable> implements
         return e;
     }
 
-    @Override
     @Transactional
     public E find(E e, K key) {
         return entityManager.find(entityClass, key);
     }
 
-    @Override
     @Transactional
     public List<E> findAll() {
         return entityManager.createQuery("from " + entityClass).getResultList();

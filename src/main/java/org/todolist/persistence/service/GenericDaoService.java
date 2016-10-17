@@ -13,7 +13,7 @@ import java.util.List;
  * Created by bapaydin on 16.10.2016.
  */
 
-public abstract class GenericDaoService<E, K extends Serializable, D extends GenericDao<E, K>> {
+public abstract class GenericDaoService<E, K extends Serializable, D extends GenericDaoRepository<E,K>> {
 
     @Autowired
     public D repository;

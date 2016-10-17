@@ -7,7 +7,9 @@ import java.io.Serializable;
  * Created by bapaydin on 16.10.2016.
  */
 @Entity
-@Table(name = "users")
+@Table(uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"email","password"})
+})
 public class User implements Serializable{
 
     @Id

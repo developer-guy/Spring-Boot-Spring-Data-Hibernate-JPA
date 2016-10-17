@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.todolist.persistence.domain.User;
 import org.todolist.persistence.service.UserService;
 
@@ -25,12 +26,12 @@ public class RegisterController {
     }
 
     @RequestMapping(path = "/register",method = RequestMethod.POST)
-    public String customerSubmit(@ModelAttribute User user,Model model){
-        User add = userService.add(user);
-        if(add != null){
-            System.out.println();
+    public String customerSubmit(@ModelAttribute User user,final RedirectAttributes redirectAttributes){
+        User addedUser = userService.add(user);
+        if(addedUser != null){
+            System.out.println("Kullanıcı başarıyla eklendi");
         }
-        model.addAttribute("user",add);
-        return "result";
+        redirectAttributes.addFlashAttribute("user",addedUser);
+        return "redirect:/result";
     }
 }
