@@ -1,5 +1,7 @@
 package org.todolist.persistence.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,8 @@ public class RegisterController {
     @Autowired
     private UserService userService;
 
+    private Logger LOG = LoggerFactory.getLogger(RegisterController.class);
+
     @RequestMapping(path = "/register",method = RequestMethod.GET)
     public String register(Model model){
         model.addAttribute("user",new User());
@@ -29,7 +33,7 @@ public class RegisterController {
     public String customerSubmit(@ModelAttribute User user,final RedirectAttributes redirectAttributes){
         User addedUser = userService.add(user);
         if(addedUser != null){
-            System.out.println("Kullanıcı başarıyla eklendi");
+           LOG.info("Kullanıcı başarıyla eklendi,id : " + addedUser.getId());
         }
         redirectAttributes.addFlashAttribute("user",addedUser);
         return "redirect:/result";

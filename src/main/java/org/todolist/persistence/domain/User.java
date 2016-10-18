@@ -1,7 +1,15 @@
 package org.todolist.persistence.domain;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by bapaydin on 16.10.2016.
@@ -10,6 +18,11 @@ import java.io.Serializable;
 @Table(uniqueConstraints = {
     @UniqueConstraint(columnNames = {"email","password"})
 })
+@lombok.Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class User implements Serializable{
 
     @Id
@@ -37,54 +50,7 @@ public class User implements Serializable{
     @Column
     private String password;
 
-    public User(){
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "user",fetch = FetchType.EAGER)
+    private List<Todo> todoList = new ArrayList<>();
 
-    }
-
-    public User(String userName, String surName, String email, String password) {
-        this.userName = userName;
-        this.surName = surName;
-        this.email = email;
-        this.password = password;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getSurName() {
-        return surName;
-    }
-
-    public void setSurName(String surName) {
-        this.surName = surName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

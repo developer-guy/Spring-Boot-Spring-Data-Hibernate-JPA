@@ -4,7 +4,9 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/org/todolist/persistence/config/DatabaseConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/org/todolist/persistence/config/HibernateJpaConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/org/todolist/persistence/controller/SpringBootWebApp.java</file>
         </fileset>
       </configuration>
     </facet>
@@ -86,5 +88,6 @@
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:2.4.6" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:bootstrap:3.3.4" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery:2.1.4" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.10" level="project" />
   </component>
 </module>
