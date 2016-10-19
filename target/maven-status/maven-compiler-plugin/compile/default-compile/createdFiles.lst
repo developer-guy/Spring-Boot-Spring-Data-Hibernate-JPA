@@ -3,10 +3,9 @@ org/todolist/persistence/service/UserService.class
 org/todolist/persistence/controller/RegisterController.class
 org/todolist/persistence/repository/UserRepository.class
 org/todolist/persistence/dao/GenericDao.class
-org/todolist/persistence/service/GenericDaoService.class
 org/todolist/persistence/domain/User.class
+org/todolist/persistence/service/GenericDaoService.class
 org/todolist/persistence/config/HibernateJpaConfig.class
 org/todolist/persistence/controller/LoginController.class
-org/todolist/persistence/dao/UserDao.class
 org/todolist/persistence/repository/GenericDaoRepository.class
 org/todolist/persistence/config/DatabaseConfig.class

@@ -9,12 +9,17 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.todolist.persistence.domain.User;
 import org.todolist.persistence.repository.TodoRepository;
 import org.todolist.persistence.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import java.util.Map;
+
+import static javax.swing.text.StyleConstants.ModelAttribute;
 
 /**
  * Created by bapaydin on 17.10.2016.

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8"/>
-    <title>Welcome page</title>
+    <title>Todo page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
@@ -21,8 +21,12 @@
 </head>
 <body>
 <form th:action="@{/todo}" th:object="${todo}" method="post">
-    <div class="panel panel-default center_div">
+    <div class="panel panel-primary center_div">
         <div class="panel-body">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">Task Addition</h3>
+            </div>
+
             <div class="form">
                 <div class="input-group">
                     <input type="text" class="form-control" th:field="*{todoText}"/>

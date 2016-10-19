@@ -34,8 +34,8 @@ public class RegisterController {
         User addedUser = userService.add(user);
         if(addedUser != null){
            LOG.info("Kullanıcı başarıyla eklendi,id : " + addedUser.getId());
+           redirectAttributes.addFlashAttribute("msg","Kullanıcı başarıyla eklendi");
         }
-        redirectAttributes.addFlashAttribute("user",addedUser);
-        return "redirect:/result";
+        return "redirect:/";
     }
 }

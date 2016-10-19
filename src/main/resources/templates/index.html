@@ -15,10 +15,13 @@
 <body>
 <form method="post" th:href="@{/index}">
 <div class="jumbotron">
+    <div class="alert alert-info" th:if="${render}">
+        <strong>Info!</strong> <p th:text="${msg}"></p>
+    </div>
     <div class="container">
         <h1>This is Sample Java 8, Spring Boot , Spring Data - Hibernate JPA Project</h1>
         <p>This is a template for a simple to-do list project website.</p>
-        <button type="submit" class="btn btn-success">Login</button>
+        <button type="submit" class="btn btn-lg btn-success">Login</button>
     </div>
 </div>
 </form>
