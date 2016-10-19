@@ -54,6 +54,7 @@ public class LoginController {
                 return "redirect:/todo";
             } else {
                 model.addAttribute("user", new User());
+                model.addAttribute("render", true);
                 model.addAttribute("msg", "Şifre yanlış,tekrar deneyin");
                 return "login";
             }

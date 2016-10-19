@@ -33,7 +33,7 @@ public class LoginControllerTest {
 
     @Test
     public void testExample() throws Exception {
-        this.entityManager.persist(new User((long) 1,"sboot", "boot","test@test.com","1234",new ArrayList<Todo>()));
+        this.entityManager.persist(new User("sboot","boot","test@test.com","1234",new ArrayList<Todo>()));
         User user = this.userService.findByEmail("test@test.com");
         assertThat(user.getUserName()).isEqualTo("sboot");
         assertThat(user.getSurName()).isEqualTo("boot");
