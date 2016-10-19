@@ -18,11 +18,7 @@ import java.util.Map;
 public class IndexController {
 
     @RequestMapping(path = "/",method = RequestMethod.GET)
-    public String index(Model model, @ModelAttribute("msg") String msg){
-        if(msg != null && !msg.toString().equals("")){
-            model.addAttribute("msg",msg.toString());
-            model.addAttribute("render",true);
-        }
+    public String index(){
         return "index";
     }
 

@@ -36,6 +36,6 @@ public class RegisterController {
            LOG.info("Kullanıcı başarıyla eklendi,id : " + addedUser.getId());
            redirectAttributes.addFlashAttribute("msg","Kullanıcı başarıyla eklendi");
         }
-        return "redirect:/";
+        return "redirect:/login";
     }
 }

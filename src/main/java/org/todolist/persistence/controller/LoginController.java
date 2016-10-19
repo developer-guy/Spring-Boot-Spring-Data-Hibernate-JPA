@@ -34,10 +34,15 @@ public class LoginController {
     private Logger LOG = LoggerFactory.getLogger(LoginController.class);
 
     @RequestMapping(path = "/login", method = RequestMethod.GET)
-    public String welcome(Model model) {
-        model.addAttribute("user", new User());
-        return "login";
-    }
+    public String welcome(Model model,@ModelAttribute("msg") String msg) {
+        if (msg != null && !msg.toString().equals("")) {
+            model.addAttribute("msg", msg.toString());
+            model.addAttribute("render", true);
+        }
+            model.addAttribute("user", new User());
+            return "login";
+        }
+
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute User user, Model model, HttpServletRequest request) {
